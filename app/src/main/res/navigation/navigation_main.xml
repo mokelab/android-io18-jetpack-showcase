@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            app:startDestination="@id/topFragment">
+
+    <fragment
+        android:id="@+id/topFragment"
+        android:name="com.mokelab.demo.io18.jetpacks.pages.top.TopFragment"
+        android:label="TopFragment">
+        <action
+            android:id="@+id/action_topFragment_to_itemListFragment"
+            app:destination="@id/itemListFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.mokelab.demo.io18.jetpacks.pages.items.ItemListFragment"
+        android:label="ItemListFragment"/>
+</navigation>
