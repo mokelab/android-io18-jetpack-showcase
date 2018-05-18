@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             app:startDestination="@id/topFragment">
 
     <fragment
         android:id="@+id/topFragment"
         android:name="com.mokelab.demo.io18.jetpacks.pages.top.TopFragment"
-        android:label="TopFragment">
+        android:label="TopFragment"
+        tools:layout="@layout/top_fragment"
+        >
         <action
             android:id="@+id/action_topFragment_to_itemListFragment"
             app:destination="@id/itemListFragment"
@@ -15,5 +18,21 @@
     <fragment
         android:id="@+id/itemListFragment"
         android:name="com.mokelab.demo.io18.jetpacks.pages.items.ItemListFragment"
-        android:label="ItemListFragment"/>
+        android:label="ItemListFragment"
+        tools:layout="@layout/item_list_fragment">
+        <action
+            android:id="@+id/action_itemListFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.mokelab.demo.io18.jetpacks.pages.items.ItemDetailFragment"
+        android:label="ItemDetailFragment"
+        tools:layout="@layout/item_detail_fragment">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:type="integer"/>
+        <deepLink app:uri="https://io18jetpack.mokelab.com/moke/{id}"/>
+    </fragment>
 </navigation>
